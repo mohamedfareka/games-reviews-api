@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import getGamesByCateg from "../../services/getGamesByCateg";
+import fetchGamesByCateg from "../../services/fetchGamesByCateg";
 import React from "react";
 import Game from "../Game/Game";
 
@@ -10,7 +10,7 @@ export default function Mmorpg() {
   useEffect(() => {
     (async () => {
       try {
-        const data = await getGamesByCateg(category);
+        const data = await fetchGamesByCateg(category);
         setGames(data);
       } catch (error) {
         console.error("Failed to fetch games:", error);
